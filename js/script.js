@@ -73,6 +73,10 @@ document.getElementById('confirmarPassword').addEventListener('input', function 
     marcarCampo(this, true);
   }
 });
+document.getElementById('confirmarPassword').addEventListener('paste', (e) => {
+  e.preventDefault();
+  alert('Pegar texto no está permitido en este campo.');
+});
 
 // Teléfono
 document.getElementById('telefono').addEventListener('input', function () {
@@ -117,26 +121,18 @@ document.getElementById('fechaNacimiento').addEventListener('change', function (
   }
 });
 
-// Comentarios (contar caracteres y limitar a 500)
+// Comentarios
 document.getElementById('comentarios').addEventListener('input', function () {
   const contador = document.getElementById('contadorComentarios');
-  const maxCaracteres = 500;
-
-  if (this.value.length > maxCaracteres) {
-    this.value = this.value.slice(0, maxCaracteres);
-  }
-
   contador.textContent = this.value.length;
 
-  // Cambiar color según cantidad de caracteres
-  if (this.value.length >= 450) {
-    contador.style.color = '#dc3545'; // rojo
-  } else if (this.value.length >= 400) {
-    contador.style.color = '#ffc107'; // amarillo
+  if (this.value.length > 450) {
+    contador.style.color = '#dc3545';
+  } else if (this.value.length > 400) {
+    contador.style.color = '#ffc107';
   } else {
-    contador.style.color = '#666'; // gris oscuro
+    contador.style.color = '#666';
   }
-
   marcarCampo(this, true);
 });
 
