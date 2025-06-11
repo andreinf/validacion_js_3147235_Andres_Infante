@@ -1,0 +1,182 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 30px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* Contenedor general */
+.container {
+  background-color: #1e1e1e;
+  padding: 30px 35px;
+  border-radius: 10px;
+ 
+  width: 400px;
+  max-width: 90vw;
+}
+
+/* Título */
+.container h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: #eee;
+  text-align: center;
+}
+
+/* Formulario en columna vertical */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Espacio mínimo entre grupos */
+}
+
+/* Cada grupo de formulario */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Espacio mínimo entre label y campo */
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ccc;
+  user-select: none;
+}
+
+/* Inputs y textarea */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea {
+  padding: 8px 12px;
+  background-color: #2a2a2a;
+  border: 1.6px solid #444;
+  border-radius: 6px;
+  color: #eee;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #5a88ca;
+  background-color: #323232;
+}
+
+/* Textarea altura */
+textarea {
+  min-height: 90px;
+}
+
+/* Checkbox en línea con texto */
+.form-group label input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.1);
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* Mensajes de error y éxito */
+.mensaje-error {
+  color: #f56342;
+  font-size: 0.8rem;
+  margin-top: 1px;
+  min-height: 16px;
+}
+
+.mensaje-exito {
+  color: #4caf50;
+  font-size: 0.8rem;
+  margin-top: 1px;
+  min-height: 16px;
+}
+
+/* Botón enviar */
+button[type="submit"] {
+  margin-top: 6px;
+  padding: 10px 18px;
+  background-color: #5a88ca;
+  color: #f1f1f1;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  user-select: none;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  background-color: #4070c7;
+}
+
+button[type="submit"]:disabled {
+  background-color: #3d3d3d;
+  cursor: not-allowed;
+}
+
+/* Barra de progreso */
+.progreso-formulario {
+  margin-top: 16px;
+  width: 100%;
+}
+
+#barraProgreso {
+  height: 18px;
+  background-color: #5a88ca;
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+/* Texto de progreso */
+.progreso-formulario p {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+/* Resumen */
+#resumenDatos {
+  margin-top: 20px;
+  background-color: #2e2e2e;
+  padding: 18px;
+  border-radius: 10px;
+  color: #eee;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+}
+
+/* Scrollbar personalizada */
+#resumenDatos::-webkit-scrollbar {
+  width: 6px;
+}
+
+#resumenDatos::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+#resumenDatos::-webkit-scrollbar-thumb {
+  background-color: #5a88ca;
+  border-radius: 20px;
+}

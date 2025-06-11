@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario avanzado</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Formulario Avanzado</h1>
+
+    <form id="formularioAvanzado" novalidate>
+      <!-- Nombre completo -->
+      <div class="form-group">
+        <label for="nombreCompleto">Nombre completo:</label>
+        <input type="text" id="nombreCompleto" name="nombreCompleto" required />
+        <p id="errorNombre" class="mensaje-error" aria-live="polite"></p>
+        <p id="exitoNombre" class="mensaje-exito" aria-live="polite"></p>
+      </div>
+
+      <!-- Correo electrónico -->
+      <div class="form-group">
+        <label for="correo">Correo electrónico:</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="ejemplo@dominio.com"
+          required
+        />
+        <p id="errorCorreo" class="mensaje-error" aria-live="polite"></p>
+        <p id="exitoCorreo" class="mensaje-exito" aria-live="polite"></p>
+      </div>
+
+      <!-- Confirmar correo electrónico -->
+      <div class="form-group">
+        <label for="confirmarPassword">Confirmar correo electrónico:</label>
+        <input
+          type="email"
+          id="confirmarPassword"
+          name="confirmarPassword"
+          placeholder="Repite tu correo electrónico"
+          required
+        />
+        <p id="errorConfirmar" class="mensaje-error" aria-live="polite"></p>
+        <p id="exitoConfirmar" class="mensaje-exito" aria-live="polite"></p>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required />
+        <div id="strengthBar" class="password-strength"></div>
+        <p id="errorPassword" class="mensaje-error" aria-live="polite"></p>
+        <p id="exitoPassword" class="mensaje-exito" aria-live="polite"></p>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input
+          type="text"
+          id="telefono"
+          name="telefono"
+          placeholder="300-123-4567"
+          required
+        />
+        <p id="errorTelefono" class="mensaje-error" aria-live="polite"></p>
+        <p id="exitoTelefono" class="mensaje-exito" aria-live="polite"></p>
+      </div>
+
+      <!-- Fecha de nacimiento -->
+      <div class="form-group">
+        <label for="fechaNacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required />
+        <p id="errorFecha" class="mensaje-error" aria-live="polite"></p>
+        <p id="exitoFecha" class="mensaje-exito" aria-live="polite"></p>
+      </div>
+
+      <!-- Comentarios -->
+      <div class="form-group">
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" maxlength="500"></textarea>
+        <div>
+          <small>Caracteres usados: <span id="contadorComentarios">0</span>/500</small>
+        </div>
+      </div>
+
+      <!-- Términos y condiciones -->
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="terminos" name="terminos" />
+          Acepto los términos y condiciones
+        </label>
+        <p id="errorTerminos" class="mensaje-error" aria-live="polite"></p>
+      </div>
+
+      <!-- Botón de envío -->
+      <button type="submit" id="btnEnviar" disabled>Enviar</button>
+
+      <!-- Resumen -->
+      <div id="resumenDatos" style="display:none; margin-top: 20px;">
+        <h3>Resumen de datos enviados:</h3>
+        <div id="contenidoResumen"></div>
+      </div>
+
+      <!-- Barra de progreso -->
+      <div class="progreso-formulario" style="margin-top: 20px;">
+        <div
+          id="barraProgreso"
+          style="width: 0%; height: 20px; background: #28a745;"
+        ></div>
+        <p>Progreso del formulario: <span id="porcentajeProgreso">0%</span></p>
+      </div>
+    </form>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
